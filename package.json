@@ -1,0 +1,58 @@
+{
+  "name": "n8n-nodes-addtowallet",
+  "version": "0.1.0",
+  "description": "n8n community node to create digital wallet passes with Add To Wallet API",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/n8n-nodes-addtowallet",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/n8n-nodes-addtowallet.git"
+  },
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+  "n8nNodesApiVersion": 1,
+  "credentials": [
+    "dist/credentials/AddToWalletApi.credentials.js"
+  ],
+  "nodes": [
+    "dist/nodes/AddToWallet.node.js"
+  ]
+},
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "wallet",
+    "digital-pass",
+    "google-wallet",
+    "apple-wallet"
+  ],
+  "engines": {
+    "node": ">=16.10",
+    "npm": ">=7.24"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.16",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "*",
+    "prettier": "^2.7.1",
+    "typescript": "~4.8.4"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -s"
+  }
+}
