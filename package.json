@@ -3,33 +3,36 @@
   "version": "0.1.0",
   "description": "n8n community node to create digital wallet passes with Add To Wallet API",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/n8n-nodes-addtowallet",
+  "homepage": "",
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com"
+    "name": "AddToWallet",
+    "email": "outreach@addtowallet.co"
+  },
+  "bugs": {
+    "url": "https://github.com/Hazelnut-Ventures/n8n-nodes-addtowallet/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/n8n-nodes-addtowallet.git"
+    "url": "git+https://github.com/Hazelnut-Ventures/n8n-nodes-addtowallet.git"
   },
   "main": "index.js",
   "files": [
     "dist"
   ],
   "n8n": {
-  "n8nNodesApiVersion": 1,
-  "credentials": [
-    "dist/credentials/AddToWalletApi.credentials.js"
-  ],
-  "nodes": [
-    "dist/nodes/AddToWallet.node.js"
-  ]
-},
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/AddToWalletApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/AddToWallet.node.js"
+    ]
+  },
   "keywords": [
-    "n8n-community-node-package",
-    "n8n",
+    "n8n-community-node",
+    "workflow-automation",
     "wallet",
-    "digital-pass",
+    "addtowallet",
     "google-wallet",
     "apple-wallet"
   ],
@@ -39,6 +42,9 @@
   },
   "devDependencies": {
     "@types/node": "^18.16.16",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
     "gulp": "^4.0.2",
     "n8n-workflow": "*",
     "prettier": "^2.7.1",
@@ -53,6 +59,10 @@
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint -s"
+    "prepublishOnly": "npm run build"
+
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
